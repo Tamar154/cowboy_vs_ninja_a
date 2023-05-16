@@ -12,8 +12,12 @@ namespace ariel
 
     public:
         Point(double xVal, double yVal);
-        
 
+        double getX();
+        double getY();
+
+        void setX(double xVal);
+        void setY(double yVal);
 
         double distance(Point other);
 
