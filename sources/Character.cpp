@@ -39,4 +39,9 @@ namespace ariel
         return "";
     }
 
+    bool Character::operator==(const Character &other) const
+    {
+        return false;
+    }
+
 }

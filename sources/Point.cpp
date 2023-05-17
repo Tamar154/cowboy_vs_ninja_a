@@ -1,8 +1,8 @@
 #include "Point.hpp"
 
 namespace ariel
-{   
-    
+{
+
     // Point::Point() : _x(0), _y(0) {}
 
     Point::Point(double x, double y) : _x(x), _y(y) {}
@@ -27,4 +27,8 @@ namespace ariel
         return originPoint;
     }
 
+    bool Point::operator==(const Point &other) const
+    {
+        return false;
+    }
 }

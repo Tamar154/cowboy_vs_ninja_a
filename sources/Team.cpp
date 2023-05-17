@@ -2,7 +2,10 @@
 
 namespace ariel
 {
-    Team::Team(Character *leader) : _leader(leader) {}
+    Team::Team(Character *leader) : _leader(leader)
+    {
+        _team.push_back(_leader);
+    }
 
     Team::~Team()
     {
@@ -10,12 +13,25 @@ namespace ariel
         {
             delete c;
         }
-        delete _leader;
+        // delete _leader;
+    }
+
+    std::vector<Character *> Team::getTeam()
+    {
+        return _team;
+    }
+
+    Character *Team::getLeader()
+    {
+        return _leader;
     }
 
     void Team::add(Character *player)
     {
-        _team.push_back(player);
+        if (_team.size() < TEAM_SIZE)
+        {
+            _team.push_back(player);
+        }
     }
 
     void Team::attack(Team *enemy)

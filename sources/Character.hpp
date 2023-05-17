@@ -32,5 +32,7 @@ namespace ariel
         void hit(int amount);
 
         string print();
+
+        bool operator==(const Character &other) const;
     };
 }

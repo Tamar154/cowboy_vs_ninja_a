@@ -27,5 +27,7 @@ namespace ariel
         void Print();
 
         static Point moveTowards(Point &originPoint, Point &destinationPoint, double distance);
+
+        bool operator==(const Point &other) const;
     };
 }

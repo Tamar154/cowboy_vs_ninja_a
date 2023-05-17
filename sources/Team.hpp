@@ -30,6 +30,9 @@ namespace ariel
         Team(Team &&other) = delete;                 // To make tidy happy
         Team &operator=(Team &&other) = delete;      // To make tidy happy
 
+        std::vector<Character*> getTeam();
+        Character* getLeader();
+
         void add(Character *player);
 
         void attack(Team *enemy);
