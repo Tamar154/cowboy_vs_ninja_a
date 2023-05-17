@@ -32,6 +32,10 @@ namespace ariel
         {
             _team.push_back(player);
         }
+        else
+        {
+            delete player;
+        }
     }
 
     void Team::attack(Team *enemy)

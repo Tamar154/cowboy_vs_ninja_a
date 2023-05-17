@@ -272,20 +272,17 @@ TEST_SUITE("TEAM CLASS")
     {
         for (int i = 0; i < 5; i++)
         {
-            Ninja *ninja = new Ninja("N", Point(1.0, 1.0));
-            team_A.add(ninja);
+            team_A.add(new Ninja("N", Point(1.0, 1.0)));
         }
 
         for (int i = 0; i < 4; i++)
         {
-            Cowboy *cowboy = new Cowboy("C", Point(1.0, 1.0));
-            team_A.add(cowboy);
+            team_A.add(new Cowboy("C", Point(1.0, 1.0)));
         }
 
         CHECK_EQ(team_A.getTeam().size(), 10);
 
-        Ninja *ninja = new Ninja("N", Point(1.0, 1.0));
-        CHECK_THROWS(team_A.add(ninja));
+        CHECK_THROWS(team_A.add(new Ninja("N", Point(1.0, 1.0))));
     }
 
     TEST_CASE("Attack function")
@@ -296,14 +293,12 @@ TEST_SUITE("TEAM CLASS")
 
         for (int i = 0; i < 5; i++)
         {
-            Ninja *ninja = new Ninja("N", Point(1.0, 1.0));
-            team_B.add(ninja);
+            team_B.add(new Ninja("N", Point(1.0, 1.0)));
         }
 
         for (int i = 0; i < 4; i++)
         {
-            Cowboy *cowboy = new Cowboy("C", Point(1.0, 1.0));
-            team_B.add(cowboy);
+            team_B.add(new Cowboy("C", Point(1.0, 1.0)));
         }
 
         team_A.attack(&team_B);
@@ -314,13 +309,14 @@ TEST_SUITE("TEAM CLASS")
     {
         CHECK_EQ(team_A.stillAlive(), 10);
 
-        int count = 0; 
+        int count = 0;
         for (Character *c : team_A.getTeam())
         {
             c->setHp(0);
-            
+
             count++;
-            if (count == 5) break;
+            if (count == 5)
+                break;
         }
 
         CHECK_EQ(team_A.stillAlive(), 5);
