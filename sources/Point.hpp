@@ -2,8 +2,11 @@
 
 #include <iostream>
 
+const double EPSILON = 0.001;
+
 namespace ariel
 {
+
     class Point
     {
     private:
@@ -23,6 +26,6 @@ namespace ariel
 
         void Print();
 
-        double moveTowards(double originPoint, double destinationPoint, double distance);
+        Point moveTowards(Point &originPoint, Point &destinationPoint, double distance);
     };
 }
