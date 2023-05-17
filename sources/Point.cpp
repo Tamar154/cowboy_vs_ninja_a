@@ -24,7 +24,7 @@ namespace ariel
 
     Point Point::moveTowards(Point &originPoint, Point &destinationPoint, double distance)
     {
-        return *this;
+        return originPoint;
     }
 
 }

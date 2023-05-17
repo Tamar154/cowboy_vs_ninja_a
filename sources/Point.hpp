@@ -26,6 +26,6 @@ namespace ariel
 
         void Print();
 
-        Point moveTowards(Point &originPoint, Point &destinationPoint, double distance);
+        static Point moveTowards(Point &originPoint, Point &destinationPoint, double distance);
     };
 }
